@@ -30,7 +30,7 @@ cats = [
     outdoor: false, occupation: "bus driver", owner_id: 3},
 ]
 
-status_updates = [
+status = [
   {status: "hungry", cat_id: 4},
   {status: "about to take a lovely nap on the radiator", cat_id: 1},
   {status: "also hungry", cat_id: 7},
@@ -53,9 +53,9 @@ owners.each do |owner|
 end
 
 cats.each do |cat|
-  Owner.create(cat)
+  Cat.create(cat)
 end
 
-status_updates.each do |status_update|
-  Owner.create(status_update)
+status.each do |status1|
+  Status.create(status1)
 end
