@@ -1,0 +1,14 @@
+<h1>Edit Yourself</h1>
+
+<%= form_for @owner do |f| %>
+  <fieldset>
+    <legend>Edit Owner</legend>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <%= f.submit %>
+
+  </fieldset>
+<% end %>

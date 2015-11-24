@@ -21,6 +21,15 @@ class OwnersController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @owner = Owner.find(params[:id])
+  end
+
+  def update
+    @owner = Owner.update(params[:id], owner_params)
+    redirect_to owner_path
+  end
+
   private
 
   def owner_params
