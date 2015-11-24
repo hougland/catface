@@ -22,7 +22,7 @@ cats = [
     outdoor: false, occupation: "unemployed", owner_id: 3},
   {name: "Wrenny", color: "brown striped", tail_length: "long", personality: "bumbling",
     outdoor: false, occupation: "librarian", owner_id: 2},
-  {name: "Katherine", color: "brown striped", tail_length: "very short", personality: "loving to a fault",
+  {name: "Catherine", color: "brown striped", tail_length: "very short", personality: "loving to a fault",
     outdoor: false, occupation: "call center", owner_id: 1},
   {name: "Edgar", color: "black", tail_length: "long", personality: "business",
     outdoor: true, occupation: "hunter", owner_id: 4},
@@ -45,7 +45,7 @@ status = [
   {status: "loving the snow!", cat_id: 5},
   {status: "it's my birthday today!", cat_id: 6},
   {status: "check out this cool article I found", cat_id: 7},
-  {status: "more box!", cat_id: 1},
+  {status: "more box!", cat_id: 1}
 ]
 
 owners.each do |owner|
