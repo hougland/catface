@@ -16,6 +16,11 @@ class OwnersController < ApplicationController
     redirect_to owner_path(owner.id)
   end
 
+  def destroy
+    Owner.destroy(params[:id])
+    redirect_to root_path
+  end
+
   private
 
   def owner_params

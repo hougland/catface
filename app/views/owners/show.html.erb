@@ -6,7 +6,11 @@
 <ul>
   <li>View list of cats this owner has</li>
   <li>Click a cat to "log in" as that cat</li>
-  <li>Edit owner, delete owner account</li>
+  <li>Edit owner owner account</li>
   <li>Add a cat</li>
   <li>Optional: show most recent statuses for each cat</li>
 </ul>
+
+<%= button_to "Edit Account", edit_owner_path(@owner.id), method: :get %>
+
+<%= button_to "Delete Account", owner_path(@owner.id), method: :delete %>
