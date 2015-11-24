@@ -1,0 +1,14 @@
+<h1>Form for new owner</h1>
+
+<%= form_for @owner do |f| %>
+  <fieldset>
+    <legend>Create Owner</legend>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <%= f.submit %>
+
+  </fieldset>
+<% end %>
