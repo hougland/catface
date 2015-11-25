@@ -1,18 +1,19 @@
 <h1>Welcome, <%= @cat.name %></h1>
 
-<p>
-  Add ability to create, edit, delete a status update
-</p>
-
 <table>
   <tr>
     <th>Date</th>
     <th>Status Updates</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
   <% @cat.status.each do |status| %>
     <tr>
       <td><%= status.created_at %></td>
       <td><%= status.status %></td>
+      <td><%= link_to "Edit", edit_owner_cat_status_path(@cat.owner_id, @cat.id, status.id) %></td>
+      <td><%= link_to "Delete", owner_cat_status_path(@cat.owner_id, @cat.id, status.id),
+        method: :delete %></td>
     </tr>
   <% end %>
 </table>

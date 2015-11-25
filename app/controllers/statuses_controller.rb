@@ -8,6 +8,20 @@ class StatusesController < ApplicationController
     redirect_to owner_cat_path(params[:owner_id], params[:cat_id])
   end
 
+  def destroy
+    Status.destroy(params[:id])
+    redirect_to owner_cat_path(params[:owner_id], params[:cat_id])
+  end
+
+  def edit
+    @status = Status.find(params[:id])
+  end
+
+  def update
+    @status = Status.update(params[:id], status_params)
+    redirect_to owner_cat_path(params[:owner_id], params[:cat_id])
+  end
+
   private
 
   def status_params
