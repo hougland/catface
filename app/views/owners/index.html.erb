@@ -5,5 +5,19 @@
 </p>
 <ul>
   <li>"Log in" as an owner</li>
-  <li>Create a new owner</li>
 </ul>
+
+<table>
+  <tr>
+    <th>Owner</th>
+    <th>City</th>
+  </tr>
+  <% @owners.each do |owner| %>
+    <tr>
+      <td><%= link_to owner.name, owner_path(owner.id) %></td>
+      <td><%= owner.city %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= button_to "Create New Owner", new_owner_path, method: :get %>
