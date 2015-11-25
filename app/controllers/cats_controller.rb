@@ -16,6 +16,20 @@ class CatsController < ApplicationController
     redirect_to owner_path(params[:owner_id])
   end
 
+  def destroy
+    Cat.destroy(params[:id])
+    redirect_to owner_path(params[:owner_id])
+  end
+
+  def edit
+    @cat = Cat.find(params[:id])
+  end
+
+  def update
+    @cat = Cat.update(params[:id], cat_params)
+    redirect_to owner_path(params[:owner_id])
+  end
+
   private
 
   def cat_params
