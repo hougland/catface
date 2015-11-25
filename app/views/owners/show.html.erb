@@ -9,7 +9,7 @@
   </tr>
   <% @owner.cats.each do |cat| %>
     <tr>
-      <td><%= link_to cat.name, owner_cat_path(cat.id, cat.owner_id) %></td>
+      <td><%= link_to cat.name, owner_cat_path(cat.owner_id, cat.id) %></td>
       <td><%= cat.status.last.status if cat.status.length > 0 %></td>
       <td><%= button_to "Edit", edit_owner_cat_path(@owner.id, cat.id), method: :get %></td>
       <td><%= button_to "Delete", owner_cat_path(@owner.id, cat.id), method: :delete %></td>
