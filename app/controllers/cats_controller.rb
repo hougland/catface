@@ -1,4 +1,12 @@
 class CatsController < ApplicationController
+  def index
+
+  end
+
+  def show
+    @cat = Cat.find(params[:id])
+  end
+
   def new
     @cat = Cat.new
   end

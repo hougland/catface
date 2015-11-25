@@ -1,0 +1,21 @@
+<h1>Welcome, <%= @cat.name %></h1>
+
+<p>
+  Add ability to create, edit, delete a status update
+</p>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Status Updates</th>
+  </tr>
+  <% @cat.status.each do |status| %>
+    <tr>
+      <td><%= status.created_at %></td>
+      <td><%= status.status %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= button_to "Add Status Update", new_owner_cat_status_path(@cat.owner_id, @cat.id),
+  method: :get %>

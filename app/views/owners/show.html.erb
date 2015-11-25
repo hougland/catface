@@ -1,13 +1,5 @@
 <h1>Welcome, <%= @owner.name %></h1>
 
-<p>
-  Things to do on this page:
-</p>
-<ul>
-  <li>Click a cat to "log in" as that cat</li>
-  <li>Add a cat</li>
-</ul>
-
 <table>
   <tr>
     <th>Cat</th>
@@ -15,7 +7,7 @@
   </tr>
   <% @owner.cats.each do |cat| %>
     <tr>
-      <td><%= cat.name %></td>
+      <td><%= link_to cat.name, owner_cat_path(cat.id, cat.owner_id) %></td>
       <td><%= cat.status.last.status if cat.status.length > 0 %></td>
     </tr>
   <% end %>
