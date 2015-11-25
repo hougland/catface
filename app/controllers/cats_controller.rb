@@ -5,7 +5,7 @@ class CatsController < ApplicationController
 
   def create
     @cat = Cat.create(cat_params)
-    redirect_to 
+    redirect_to owner_path(params[:owner_id])
   end
 
   private

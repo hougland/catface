@@ -1,6 +1,6 @@
 <h1>Add a Cat</h1>
 
-<%= form_for @cat do |f| %>
+<%= form_for @cat, :url => {:controller => 'cats', :action => 'create'} do |f| %>
   <fieldset>
     <legend>Create Cat</legend>
 
