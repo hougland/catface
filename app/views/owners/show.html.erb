@@ -27,6 +27,14 @@
   </tfoot>
 </table>
 
+<h2>Connect With Other Owners in <%= @owner.city %>:</h2>
+<ul>
+  <% @owners_in_city.each do |owner| %>
+    <% if owner.name != @owner.name %>
+      <li><%= link_to owner.name, owner_path(owner.id) %></li>
+    <% end %>
+  <% end %>
+</ul>
 
 <div class="accnt_buttons">
 <%= button_to "Edit Account", edit_owner_path(@owner.id), method: :get, class: "new_owner" %>

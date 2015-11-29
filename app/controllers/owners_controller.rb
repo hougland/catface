@@ -12,6 +12,7 @@ class OwnersController < ApplicationController
   def show
     @owner = Owner.find(params[:id])
     @cats = @owner.cats
+    @owners_in_city = Owner.where(city: @owner.city)
     @statuses = []
     @cats.each do |cat|
       cat.status.each do |status|
