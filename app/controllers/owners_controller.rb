@@ -1,6 +1,12 @@
 class OwnersController < ApplicationController
   def index
+    @owner = Owner.new
     @owners = Owner.all
+  end
+
+  def select
+    owner = Owner.find_by name: params[:owner_name]
+    redirect_to owner_path(owner.id)
   end
 
   def show

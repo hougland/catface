@@ -8,10 +8,13 @@
 </head>
 <body>
   <header>
+    <div class="header">
+    <%= render partial: "log_in" %></div>
     <%= image_tag("catbookheader.jpg", class: "header_img") %>
   </header>
 
-<%= yield %>
-
+  <div>
+    <%= yield %>
+  </div>
 </body>
 </html>

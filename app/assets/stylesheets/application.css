@@ -14,10 +14,95 @@
  *= require_self
  */
 
+ body {
+   margin: 0;
+   font-family: helvetica, arial, sans-serif;
+ }
+
+ h1 {
+   font-size: 36px;
+   font-weight: bold;
+ }
+
+ p {
+   font-size: 19px;
+   font-weight: normal;
+ }
+
+ .log-in {
+   float: right;
+   margin-top: 6px;
+   margin-right: 75px;
+   color: white;
+   font-size: 12px;
+ }
+
+ .log-out {
+   color: white;
+   font-size: 16px;
+   float: right;
+   margin-top: 17px;
+   margin-right: 75px;
+   text-decoration: none;
+ }
+
+ h2.home {
+   font-size: 30px;
+   color: white;
+   margin-left: 100px;
+   font-weight: bold;
+   display: inline-block;
+   position: relative;
+   top: -14px;
+ }
+
+ div {
+   padding-left: 200px;
+ }
+
+  input[type=submit].log-in-btn {
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 13px;
+    font-family: helvetica, arial, sans-serif;
+    color: #fff;
+    background-color: #566ea1;
+ }
+
+ input[type=submit].new_owner {
+    background: linear-gradient(#79bc64, #578843);
+    min-width: 194px;
+    padding: 7px 20px;
+    box-shadow: inset 0 1px 1px #a4e388;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    border: 1px solid;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 1px;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Freight Sans Bold', 'Helvetica Neue', 'Segoe UI', 'Malgun Gothic', Meiryo, 'Microsoft JhengHei', helvetica, arial, sans-serif;
+    }
+
  .header_img {
    width: 50%;
    height: 50%;
    display: block;
    margin-left: auto;
-   margin-right: auto
+   margin-right: auto;
+   padding-top: 50px;
  }
+
+.header {
+  height: 50px;
+  background-color: #3b539b;
+  width: 100%;
+  display: block;
+  position: fixed;
+  padding-left: 0;
+}

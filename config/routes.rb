@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'owners#index'
+  get 'owners/select' => 'owners#select', as: :owner_select
 
   resources :owners do
     resources :cats do

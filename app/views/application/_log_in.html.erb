@@ -1,0 +1,13 @@
+<h2 class="home">Catbook</h2>
+
+<% if !@owners.nil? %>
+  <%= form_tag owner_select_path, method: :get, class: "log-in" do %>
+    <legend>Name</legend>
+    <%= text_field_tag(:owner_name) %>
+    <%= submit_tag "Log In", class: "log-in-btn" %>
+  <% end %>
+
+  <% else %>
+  <%= link_to "Log Out", root_path, class: "log-out" %>
+
+<% end %>
