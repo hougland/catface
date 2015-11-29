@@ -2,6 +2,6 @@
   <%= f.label :status %>
   <%= f.text_field :status %>
   <%= f.hidden_field :owner_id, :value => params[:owner_id] %>
-  <%= f.hidden_field :cat_id, :value => params[:cat_id] %>
-  <%= f.submit %>
+  <%= f.hidden_field :cat_id, :value => params[:cat_id] %><br><br>
+  <%= f.submit class: "new_owner" %>
 <% end %>

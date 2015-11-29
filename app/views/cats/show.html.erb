@@ -3,20 +3,27 @@
 <table>
   <tr>
     <th>Date</th>
+    <td></td>
     <th>Status Updates</th>
+    <td></td>
     <th>Edit</th>
     <th>Delete</th>
   </tr>
   <% @cat.status.each do |status| %>
     <tr>
       <td><%= status.created_at %></td>
+      <td></td>
       <td><%= status.status %></td>
-      <td><%= link_to "Edit", edit_owner_cat_status_path(@cat.owner_id, @cat.id, status.id) %></td>
-      <td><%= link_to "Delete", owner_cat_status_path(@cat.owner_id, @cat.id, status.id),
-        method: :delete %></td>
+      <td></td>
+      <td><%= button_to "Edit", edit_owner_cat_status_path(@cat.owner_id, @cat.id, status.id),
+        method: :get, class: "log-in-btn" %></td>
+      <td><%= button_to "Delete", owner_cat_status_path(@cat.owner_id, @cat.id, status.id),
+        method: :delete, class: "log-in-btn" %></td>
     </tr>
   <% end %>
 </table>
 
-<%= button_to "Add Status Update", new_owner_cat_status_path(@cat.owner_id, @cat.id),
-  method: :get %>
+<div class="status_box">
+  <%= button_to "Add Status Update", new_owner_cat_status_path(@cat.owner_id, @cat.id),
+    method: :get, class: "log-in-btn" %>
+</div>
