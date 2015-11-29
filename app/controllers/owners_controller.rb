@@ -11,6 +11,13 @@ class OwnersController < ApplicationController
 
   def show
     @owner = Owner.find(params[:id])
+    @cats = @owner.cats
+    @statuses = []
+    @cats.each do |cat|
+      cat.status.each do |status|
+        @statuses.push(status)
+      end
+    end
   end
 
   def new

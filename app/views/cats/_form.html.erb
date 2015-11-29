@@ -1,21 +1,16 @@
 <%= form_for @cat, :url => {:controller => 'cats', :action => action } do |f| %>
-  <fieldset>
-    <legend><%= legend %> Cat</legend>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :color %>
-    <%= f.text_field :color %>
-    <%= f.label :tail_length %>
-    <%= f.number_field :tail_length %>
-    <%= f.label :personality %>
-    <%= f.text_field :personality %>
-    <%= f.label :outdoor? %>
-    <%= f.check_box :outdoor %>
-    <%= f.label :occupation %>
-    <%= f.text_field :occupation %>
-    <%= f.hidden_field :owner_id, :value => params[:owner_id] %>
-    <%= f.submit %>
-
-  </fieldset>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+  <%= f.label :color %>
+  <%= f.text_field :color %><br><br>
+  <%= f.label :tail_length %>
+  <%= f.number_field :tail_length %><br><br>
+  <%= f.label :personality %>
+  <%= f.text_field :personality %><br><br>
+  <%= f.label :outdoor? %>
+  <%= f.check_box :outdoor %><br><br>
+  <%= f.label :occupation %>
+  <%= f.text_field :occupation %><br><br>
+  <%= f.hidden_field :owner_id, :value => params[:owner_id] %>
+  <%= f.submit class: "new_owner" %>
 <% end %>

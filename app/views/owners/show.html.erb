@@ -1,22 +1,34 @@
 <h1>Welcome, Owner <%= @owner.name %></h1>
 
+<h2>Your Cats' Status Updates:</h2>
+
+<ul>
+<% @statuses.each do |status| %>
+  <div class="status_box">
+    <li class="name"><%= link_to status.cat.name, owner_cat_path(@owner.id, status.cat.id) %></li>
+    <li class="date"><%= distance_of_time_in_words(status.cat.updated_at, Time.now) %> ago</li>
+    <li class="status"><%= status.status %></li><br>
+  </div>
+<% end %>
+</ul>
+
+<h2>Cats at a Glance:</h2>
 <table>
-  <tr>
-    <th>Cat</th>
-    <th>Most recent status</th>
-    <th>Edit Cat</th>
-    <th>Delete Cat</th>
-  </tr>
   <% @owner.cats.each do |cat| %>
     <tr>
       <td><%= link_to cat.name, owner_cat_path(cat.owner_id, cat.id) %></td>
-      <td><%= cat.status.last.status if cat.status.length > 0 %></td>
-      <td><%= button_to "Edit", edit_owner_cat_path(@owner.id, cat.id), method: :get %></td>
-      <td><%= button_to "Delete", owner_cat_path(@owner.id, cat.id), method: :delete %></td>
+      <td></td>
+      <td><%= button_to "Edit", edit_owner_cat_path(@owner.id, cat.id), method: :get, class: "log-in-btn" %></td>
+      <td><%= button_to "Delete", owner_cat_path(@owner.id, cat.id), method: :delete, class: "log-in-btn" %></td>
     </tr>
   <% end %>
+  <tfoot>
+    <td><%= button_to "Add a Cat", new_owner_cat_path(@owner.id), method: :get, class: "log-in-btn" %></td>
+  </tfoot>
 </table>
 
-<%= button_to "Add a Cat", new_owner_cat_path(@owner.id), method: :get %>
-<%= button_to "Edit Account", edit_owner_path(@owner.id), method: :get %>
-<%= button_to "Delete Account", owner_path(@owner.id), method: :delete %>
+
+<div class="accnt_buttons">
+<%= button_to "Edit Account", edit_owner_path(@owner.id), method: :get, class: "new_owner" %>
+<%= button_to "Delete Account", owner_path(@owner.id), method: :delete, class: "new_owner" %>
+</div>

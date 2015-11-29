@@ -68,6 +68,11 @@
     font-family: helvetica, arial, sans-serif;
     color: #fff;
     background-color: #566ea1;
+    display: inline-block;
+ }
+
+ div button {
+   display: inline-block;
  }
 
  input[type=submit].new_owner {
@@ -105,4 +110,39 @@
   display: block;
   position: fixed;
   padding-left: 0;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.status_box {
+  padding-left: 30px;
+}
+
+.date {
+  font-size: 12px;
+  color: gray;
+}
+
+ul {
+  list-style: none;
+}
+
+table tr td:empty {
+    width: 25px;
+}
+
+table tr td {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+table {
+  padding-left: 70px;
+}
+
+.accnt_buttons {
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
