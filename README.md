@@ -11,38 +11,17 @@ It was developed in November 2015 by Ricky over Thanksgiving break while they we
 Catbook was developed using Rails 4.2.4.
 
 To install Catbook:
+
 1. Clone the repo on your local computer, using this SSH link: `git@github.com:hougland/catface.git`
+
 2. Run `bundle install` to download the gems.
 
-..and you're good to go!
+3. Run `rake db:migrate` and `rake db:seed` for seed data.
+
+4. Though there are currently no tests, once added, they will run via the `rspec` command.
+
+...and you're good to go!
 
 ## Contribute
 
 Ricky is currently accepting pull requests for improving Catbook's functionality and aesthetics. If you have experience working with Rails, please consider contributing.
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
