@@ -27,6 +27,8 @@ Ricky is currently accepting pull requests for improving Catbook's functionality
 
 Features to be developed:
 
+* Format cats' homepage
+
 * Add nicknames for cats
 
 * From the owner's homepage, display cats' status updates by most recent at the top
