@@ -167,6 +167,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  pry
   pry-rails
   rails (= 4.2.4)
   rails-erd

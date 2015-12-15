@@ -4,9 +4,9 @@
 
 Catbook is a social networking site for cats to connect with other cats, all under their owners' watchful eyes.
 
-Owners create accounts by signing up, and "log in" by typing their name (with no typos) into the search bar. They can create accounts for each of their cats, edit their cats' information,
+Owners create accounts by signing up, and "log in" by typing their name (with no typos) into the search bar. They can create accounts for each of their cats, edit their cats' information, and find other owners in their city. Most importantly, a cat can create status updates to share with the world.
 
-It was developed in November 2015 by Ricky over Thanksgiving break while they were in Ada Developers Academy.
+Catbook was developed in November 2015 by Ricky over Thanksgiving break while they were in Ada Developers Academy.
 
 ## Installation
 
