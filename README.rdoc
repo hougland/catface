@@ -11,8 +11,8 @@ It was developed in November 2015 by Ricky over Thanksgiving break while they we
 Catbook was developed using Rails 4.2.4.
 
 To install Catbook:
-1. Clone the repo on your local computer.
-2. Run <tt>bundle install</tt> to download the gems.
+1. Clone the repo on your local computer, using this SSH link: `git@github.com:hougland/catface.git`
+2. Run `bundle install` to download the gems.
 
 ..and you're good to go!
 
