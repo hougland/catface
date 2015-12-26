@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe CatsController, type: :controller do
+  let(:cat) do
+    Cat.create(name: "name", owner_id: 1)
+  end
   describe "GET 'show'" do
     it "successful show renders show page" do
-      cat = Cat.create(name: "name", owner_id: 1)
+      cat
       expect(Cat.all.length).to eq 1
       get :show, owner_id: cat.owner_id, id: cat.id
       expect(response.status).to eq 200
@@ -39,13 +42,12 @@ RSpec.describe CatsController, type: :controller do
 
   describe "DELETE 'destroy'" do
     it "successfully destroys instance of cat" do
-      cat = Cat.create(name: "name", owner_id: 1)
+      cat
       expect(Cat.all.length).to eq 1
       delete :destroy, owner_id: cat.owner_id, id: cat.id
       expect(Cat.all.length).to eq 0
     end
     it "redirects to owner's show page" do
-      cat = Cat.create(name: "name", owner_id: 1)
       delete :destroy, owner_id: cat.owner_id, id: cat.id
       expect(subject).to redirect_to owner_path(1)
     end
@@ -53,7 +55,6 @@ RSpec.describe CatsController, type: :controller do
 
   describe "GET 'edit'" do
     it "successfully renders edit page" do
-      cat = Cat.create(name: "name", owner_id: 1)
       get :edit, owner_id: cat.owner_id, id: cat.id
       expect(response.status).to eq 200
       expect(subject).to render_template :edit
