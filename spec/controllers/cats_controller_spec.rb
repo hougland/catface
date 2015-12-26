@@ -60,4 +60,12 @@ RSpec.describe CatsController, type: :controller do
       expect(subject).to render_template :edit
     end
   end
+
+  describe "POST 'update'" do
+    it "redirects to owner's home page" do
+      cat
+      post :update, { cat: { name: "another name", owner_id: 1 }, owner_id: 1, id: 1 }
+      expect(subject).to redirect_to owner_path(1)
+    end
+  end
 end
