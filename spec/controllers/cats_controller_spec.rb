@@ -10,4 +10,12 @@ RSpec.describe CatsController, type: :controller do
       expect(subject).to render_template :show
     end
   end
+
+  describe "GET 'new'" do
+    it "successfully renders new page" do
+      get :new, owner_id: 1
+      expect(response.status).to eq 200
+      expect(subject).to render_template :new
+    end
+  end
 end
