@@ -50,4 +50,13 @@ RSpec.describe CatsController, type: :controller do
       expect(subject).to redirect_to owner_path(1)
     end
   end
+
+  describe "GET 'edit'" do
+    it "successfully renders edit page" do
+      cat = Cat.create(name: "name", owner_id: 1)
+      get :edit, owner_id: cat.owner_id, id: cat.id
+      expect(response.status).to eq 200
+      expect(subject).to render_template :edit
+    end
+  end
 end
