@@ -13,6 +13,12 @@ RSpec.describe StatusesController, type: :controller do
     Status.create(status: "something", cat_id: cat.id)
   end
 
+  let(:good_params) do
+    { status:
+      { status: "something else", cat_id: cat.id },
+      cat_id: cat.id, owner_id: owner.id }
+  end
+
   describe "GET 'index'" do
     it "successful index renders index page" do
       get :index, owner_id: owner.id, cat_id: cat.id
@@ -40,19 +46,21 @@ RSpec.describe StatusesController, type: :controller do
   end
 
   describe "POST 'create'" do
-    it "redirects to cat's show page" do
-      post :create, { status: { status: "something else", cat_id: cat.id }, cat_id: cat.id, owner_id: owner.id }
+    it "redirects to status' show page" do
+      post :create, good_params
       expect(subject).to redirect_to owner_cat_path(owner_id: owner.id, id: cat.id)
     end
-    # it "given good parameters, successfully creates new cat" do
-    #   expect(Cat.all.length).to eq 0
-    #   post :create, { cat: { name: "name", owner_id: 1 }, owner_id: 1 }
-    #   expect(Cat.all.length).to eq 1
-    # end
-    # it "given bad parameters, does not create new cat" do
-    #   expect(Cat.all.length).to eq 0
-    #   post :create, { cat: { name: nil, owner_id: nil }, owner_id: 1 }
-    #   expect(Cat.all.length).to eq 0
-    # end
+    it "given good parameters, successfully creates new status" do
+      expect(Status.all.length).to eq 0
+      post :create, good_params
+      expect(Status.all.length).to eq 1
+    end
+    it "given bad parameters, does not create new status" do
+      expect(Status.all.length).to eq 0
+      post :create, { status: { status: nil, cat_id: cat.id }, cat_id: cat.id, owner_id: owner.id }
+      expect(Status.all.length).to eq 0
+      post :create, { status: { status: "something more", cat_id: nil }, cat_id: cat.id, owner_id: owner.id }
+      expect(Status.all.length).to eq 0
+    end
   end
 end
