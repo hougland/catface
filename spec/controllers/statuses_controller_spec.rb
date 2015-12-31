@@ -63,4 +63,18 @@ RSpec.describe StatusesController, type: :controller do
       expect(Status.all.length).to eq 0
     end
   end
+
+  describe "DELETE 'destroy'" do
+    it "successfully destroys instance of status" do
+      status
+      expect(Status.all.length).to eq 1
+      delete :destroy, owner_id: cat.owner_id, cat_id: status.cat.id, id: status.id
+      expect(Status.all.length).to eq 0
+    end
+    it "redirects to owner's show page" do
+      status
+      delete :destroy, owner_id: cat.owner_id, cat_id: status.cat.id, id: status.id
+      expect(subject).to redirect_to owner_cat_path(owner_id: status.cat.owner_id, id: cat.id)
+    end
+  end
 end
