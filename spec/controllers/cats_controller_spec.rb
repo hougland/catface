@@ -19,7 +19,6 @@ RSpec.describe CatsController, type: :controller do
       get :new, owner_id: 1
       expect(response.status).to eq 200
       expect(subject).to render_template :new
-      expect(response.status).to eq 200
     end
   end
 
