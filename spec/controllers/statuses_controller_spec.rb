@@ -77,4 +77,12 @@ RSpec.describe StatusesController, type: :controller do
       expect(subject).to redirect_to owner_cat_path(owner_id: status.cat.owner_id, id: cat.id)
     end
   end
+
+  describe "GET 'edit'" do
+    it "successfully renders edit page" do
+      get :edit, owner_id: cat.owner_id, cat_id: cat.id, id: status.id
+      expect(response.status).to eq 200
+      expect(subject).to render_template :edit
+    end
+  end
 end
