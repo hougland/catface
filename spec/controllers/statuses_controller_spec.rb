@@ -38,4 +38,21 @@ RSpec.describe StatusesController, type: :controller do
       expect(subject).to render_template :new
     end
   end
+
+  describe "POST 'create'" do
+    it "redirects to cat's show page" do
+      post :create, { status: { status: "something else", cat_id: cat.id }, cat_id: cat.id, owner_id: owner.id }
+      expect(subject).to redirect_to owner_cat_path(owner_id: owner.id, id: cat.id)
+    end
+    # it "given good parameters, successfully creates new cat" do
+    #   expect(Cat.all.length).to eq 0
+    #   post :create, { cat: { name: "name", owner_id: 1 }, owner_id: 1 }
+    #   expect(Cat.all.length).to eq 1
+    # end
+    # it "given bad parameters, does not create new cat" do
+    #   expect(Cat.all.length).to eq 0
+    #   post :create, { cat: { name: nil, owner_id: nil }, owner_id: 1 }
+    #   expect(Cat.all.length).to eq 0
+    # end
+  end
 end
