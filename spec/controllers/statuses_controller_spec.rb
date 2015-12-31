@@ -85,4 +85,12 @@ RSpec.describe StatusesController, type: :controller do
       expect(subject).to render_template :edit
     end
   end
+
+  describe "POST 'update'" do
+    it "redirects to owner's home page" do
+      status
+      post :update, { status: { status: "something else", cat_id: cat.id }, cat_id: cat.id, owner_id: owner.id, id: status.id }
+      expect(subject).to redirect_to owner_cat_path(owner_id: status.cat.owner_id, id: status.cat.id)
+    end
+  end
 end
