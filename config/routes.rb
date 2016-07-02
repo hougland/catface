@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'owners/select' => 'owners#select', as: :owner_select
 
   resources :owners do
-    resources :cats do
+    resources :cats, except: [:index] do
       resources :statuses
     end
   end
